@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+files:
+  - source: build/
+    destination: /var/www/html
+    overwrite: yes
+
+hooks:
+  AfterInstall:
+    - location: scripts/cleanup_old_files.sh
+      timeout: 60
+      runas: root
+  ApplicationStart:
+    - location: scripts/restart_nginx.sh
+      timeout: 60
+      runas: root
