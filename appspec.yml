@@ -11,6 +11,6 @@ hooks:
       timeout: 60
       runas: root
   ApplicationStart:
-    - location: scripts/scripts/restart_nginx.sh
+    - location: scripts/restart_nginx.sh
       timeout: 60
       runas: root
